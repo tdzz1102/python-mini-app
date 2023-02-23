@@ -8,6 +8,7 @@
 class Context:
     def __enter__(self):
         print('enter関数が呼ばれた')
+        return 'I love Waner'
     
     def __exit__(self, _type, _value, _traceback):
         print(f"exit関数が呼ばれ, type=f{_type}, value=f{_value}, traceback=f{_traceback}")
@@ -16,6 +17,7 @@ class Context:
         return True
 
 with Context() as c:
+    print(c)
     raise FileNotFoundError("how are you?")
     print('到達不可領域')
 
